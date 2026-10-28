@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  namespace: news-scraper
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: news-scraper-gp3
+  resources:
+    requests:
+      storage: 1Gi
