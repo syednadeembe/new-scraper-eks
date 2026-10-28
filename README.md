@@ -27,10 +27,10 @@ The browser uses same-origin relative paths for the API. Nginx only serves the s
 Run from the repository root on a machine with Docker:
 
 ```bash
-docker build -t xlabsimages/news-scraper-backend:1.0 ./backend
-docker push xlabsimages/news-scraper-backend:1.0
-docker build -t xlabsimages/news-scraper-frontend:1.0 -f frontend/Dockerfile .
-docker push xlabsimages/news-scraper-frontend:1.0
+docker build --platform linux/amd64 -t xlabsimages/news-scraper-backend:v2 ./backend
+docker push xlabsimages/news-scraper-backend:v2
+docker build --platform linux/amd64 -t xlabsimages/news-scraper-frontend:v2 -f frontend/Dockerfile .
+docker push xlabsimages/news-scraper-frontend:v2
 ```
 
 The backend image includes the FastAPI `/healthz` endpoint used by Kubernetes probes and the ALB target health check.
