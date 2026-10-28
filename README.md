@@ -17,7 +17,7 @@ The browser uses same-origin relative paths for the API. Nginx only serves the s
 ## Prerequisites
 
 - The EKS cluster, worker nodes, EBS CSI driver, and EKS Pod Identity Agent from Labs 12–13 are available.
-- The AWS Load Balancer Controller is installed and its `alb` IngressClass is ready before applying `k8s/05-ingress.yaml`.
+- Install cert-manager, create the controller IAM role and Pod Identity association, and apply the pinned controller manifests in `platform/aws-load-balancer-controller/` before applying `k8s/05-ingress.yaml`. See that directory's README for the short setup sequence.
 - The public subnets are tagged for ALB discovery and span at least two Availability Zones.
 - `news-scraper-gp3` StorageClass exists.
 - The two public Docker Hub images below have been built and pushed.
